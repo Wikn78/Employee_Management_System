@@ -16,5 +16,20 @@ namespace EmployeeManagementSystem
         {
             InitializeComponent();
         }
+
+        private void showPasswordCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (showPasswordCheckBox.Checked)
+                passwordMaskedTextBox.PasswordChar = '\0';
+            else
+                passwordMaskedTextBox.PasswordChar = '*';
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
