@@ -128,7 +128,6 @@
             this.Name = "LoginForm";
             this.Text = "User Sign-in";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
