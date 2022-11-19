@@ -16,5 +16,26 @@ namespace EmployeeManagementSystem
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            EmployeeAddForm addForm = new EmployeeAddForm();
+            addForm.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ScheduleViewerForm scheduleForm = new ScheduleViewerForm();
+            scheduleForm.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Close();
+        }
     }
 }

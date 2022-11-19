@@ -27,9 +27,16 @@ namespace EmployeeManagementSystem
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void quitButton_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
 
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            TransitionForm TransitionForm = new TransitionForm();
+            TransitionForm.Show();
+            this.Hide();
         }
     }
 }

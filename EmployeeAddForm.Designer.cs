@@ -59,7 +59,7 @@
             this.button1.Location = new System.Drawing.Point(626, 405);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(116, 33);
-            this.button1.TabIndex = 0;
+            this.button1.TabIndex = 12;
             this.button1.Text = "Accept";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -70,7 +70,7 @@
             this.button2.Location = new System.Drawing.Point(504, 405);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(116, 33);
-            this.button2.TabIndex = 0;
+            this.button2.TabIndex = 11;
             this.button2.Text = "Clear";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -81,7 +81,7 @@
             this.button3.Location = new System.Drawing.Point(64, 405);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(116, 33);
-            this.button3.TabIndex = 0;
+            this.button3.TabIndex = 10;
             this.button3.Text = "Back";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -181,21 +181,21 @@
             this.textBox1.Location = new System.Drawing.Point(515, 23);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(227, 20);
-            this.textBox1.TabIndex = 2;
+            this.textBox1.TabIndex = 5;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(515, 49);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(227, 20);
-            this.textBox3.TabIndex = 2;
+            this.textBox3.TabIndex = 6;
             // 
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(150, 23);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(250, 20);
-            this.textBox4.TabIndex = 2;
+            this.textBox4.TabIndex = 1;
             // 
             // textBox5
             // 
@@ -209,31 +209,87 @@
             this.textBox6.Location = new System.Drawing.Point(150, 73);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(250, 20);
-            this.textBox6.TabIndex = 2;
+            this.textBox6.TabIndex = 3;
             // 
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(150, 99);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(250, 20);
-            this.textBox8.TabIndex = 2;
+            this.textBox8.TabIndex = 4;
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "AL",
+            "AK",
+            "AZ",
+            "AR",
+            "CA",
+            "CO",
+            "CT",
+            "DE",
+            "FL",
+            "GA",
+            "HI",
+            "ID",
+            "IL",
+            "IN",
+            "IA",
+            "KS",
+            "KY",
+            "LA",
+            "ME",
+            "MD",
+            "MA",
+            "MI",
+            "MN",
+            "MS",
+            "MO",
+            "MT",
+            "NE",
+            "NV",
+            "NH",
+            "NJ",
+            "NM",
+            "NY",
+            "NC",
+            "ND",
+            "OH",
+            "OK",
+            "OR",
+            "PA",
+            "RI",
+            "SC",
+            "SD",
+            "TN",
+            "TX",
+            "UT",
+            "VT",
+            "VA",
+            "WA",
+            "WV",
+            "WI",
+            "WY"});
             this.comboBox1.Location = new System.Drawing.Point(515, 76);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(227, 21);
-            this.comboBox1.TabIndex = 3;
+            this.comboBox1.TabIndex = 7;
             this.comboBox1.Text = "N/A";
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Associate",
+            "Manager",
+            "Supervisor",
+            "Human Resources"});
             this.comboBox2.Location = new System.Drawing.Point(515, 103);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(227, 21);
-            this.comboBox2.TabIndex = 3;
+            this.comboBox2.TabIndex = 8;
             this.comboBox2.Text = "N/A";
             // 
             // pictureBox1
@@ -242,6 +298,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(504, 147);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(238, 230);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
@@ -251,7 +308,7 @@
             this.button4.Location = new System.Drawing.Point(397, 352);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(101, 25);
-            this.button4.TabIndex = 0;
+            this.button4.TabIndex = 9;
             this.button4.Text = "Choose Image";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button3_Click);

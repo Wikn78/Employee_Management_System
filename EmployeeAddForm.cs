@@ -19,12 +19,20 @@ namespace EmployeeManagementSystem
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            TransitionForm form = new TransitionForm();
+            form.Show();
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            textBox1.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+            textBox5.Text = "";
+            textBox6.Text = "";
+            textBox8.Text = "";
+            // needs to reset the pictureBox
         }
 
         private void button1_Click(object sender, EventArgs e)
