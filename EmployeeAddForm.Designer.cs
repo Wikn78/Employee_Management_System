@@ -50,6 +50,8 @@
             this.positionCBox = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.shiftCBox = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +61,7 @@
             this.button1.Location = new System.Drawing.Point(626, 405);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(116, 33);
-            this.button1.TabIndex = 12;
+            this.button1.TabIndex = 11;
             this.button1.Text = "Accept";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -70,7 +72,7 @@
             this.button2.Location = new System.Drawing.Point(504, 405);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(116, 33);
-            this.button2.TabIndex = 11;
+            this.button2.TabIndex = 12;
             this.button2.Text = "Clear";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -81,7 +83,7 @@
             this.button3.Location = new System.Drawing.Point(64, 405);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(116, 33);
-            this.button3.TabIndex = 10;
+            this.button3.TabIndex = 13;
             this.button3.Text = "Back";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -308,10 +310,33 @@
             this.button4.Location = new System.Drawing.Point(397, 352);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(101, 25);
-            this.button4.TabIndex = 9;
+            this.button4.TabIndex = 10;
             this.button4.Text = "Choose Image";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // shiftCBox
+            // 
+            this.shiftCBox.FormattingEnabled = true;
+            this.shiftCBox.Items.AddRange(new object[] {
+            "Morning Shift",
+            "Evening Shift",
+            "Night Shift"});
+            this.shiftCBox.Location = new System.Drawing.Point(150, 125);
+            this.shiftCBox.Name = "shiftCBox";
+            this.shiftCBox.Size = new System.Drawing.Size(250, 21);
+            this.shiftCBox.TabIndex = 9;
+            this.shiftCBox.Text = "N/A";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label10.Location = new System.Drawing.Point(108, 129);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(36, 17);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Shift";
             // 
             // EmployeeAddForm
             // 
@@ -319,6 +344,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.shiftCBox);
             this.Controls.Add(this.positionCBox);
             this.Controls.Add(this.stateCBox);
             this.Controls.Add(this.sSNTextBox);
@@ -327,6 +353,7 @@
             this.Controls.Add(this.lNameTextBox);
             this.Controls.Add(this.fNameTextBox);
             this.Controls.Add(this.pNumTextBox);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
@@ -373,5 +400,7 @@
         private System.Windows.Forms.ComboBox positionCBox;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ComboBox shiftCBox;
+        private System.Windows.Forms.Label label10;
     }
 }
