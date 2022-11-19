@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace EmployeeManagementSystem
 {
@@ -26,18 +29,26 @@ namespace EmployeeManagementSystem
 
         private void button2_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "";
-            textBox3.Text = "";
-            textBox4.Text = "";
-            textBox5.Text = "";
-            textBox6.Text = "";
-            textBox8.Text = "";
+            pNumTextBox.Text = "";
+            sSNTextBox.Text = "";
+            fNameTextBox.Text = "";
+            lNameTextBox.Text = "";
+            addTextBox.Text = "";
+            zipTextBox.Text = "";
             // needs to reset the pictureBox
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string connetionString;
+            connetionString = @"Data Source=JORGLE;Initial Catalog=EmployeeManagement;Integrated Security=True"; // don't forget to change your datasource when using this
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
 
+            SqlCommand sc = new SqlCommand("Insert into EmployeeInfo (eID,fName,lName, address, zip, pNum, SSN, state, position) values ('" + "')", cnn);
+            sc.ExecuteNonQuery();
+
+            cnn.Close();
         }
     }
 }

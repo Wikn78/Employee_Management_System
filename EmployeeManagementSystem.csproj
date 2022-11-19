@@ -91,6 +91,7 @@
     <EmbeddedResource Include="TransitionForm.resx">
       <DependentUpon>TransitionForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DatabaseBackup\EmployeeManagement.bak" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -107,5 +108,6 @@
   <ItemGroup>
     <Content Include="Images\PlaceHolder.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
