@@ -52,7 +52,7 @@ namespace EmployeeManagementSystem
                 Console.Write(count);
             }
 
-            // sql keeps throwing an error
+            // sql keeps throwing a formatting error
             SqlCommand sc = new SqlCommand("INSERT into dbo.EmployeeManagement (eID, fName,lName, address, zip, pNum, SSN, state, position, shift) values ('" + count+1 + "')" + "('" + fNameTextBox.Text + "')" 
                 + "('" + lNameTextBox.Text + "')" + "('" + addTextBox.Text + "')" + "('" + zipTextBox.Text + "')" + "('" + pNumTextBox.Text + "')" + "('" + sSNTextBox.Text + "')" 
                 + "('" + stateCBox.SelectedIndex + "')" + "('" + positionCBox.SelectedIndex + "')" + "('" + shiftCBox.SelectedIndex + "')", cnn);
