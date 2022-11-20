@@ -40,12 +40,22 @@ namespace EmployeeManagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
+            int count = 0;
             string connetionString;
             connetionString = @"Data Source=JORGLE;Initial Catalog=EmployeeManagement;Integrated Security=True"; // don't forget to change your datasource when using this
             SqlConnection cnn = new SqlConnection(connetionString);
             cnn.Open();
 
-            SqlCommand sc = new SqlCommand("Insert into EmployeeInfo (eID,fName,lName, address, zip, pNum, SSN, state, position) values ('" + "')", cnn);
+            using (SqlCommand cmdCount = new SqlCommand("SELECT COUNT(*) FROM dbo.EmployeeManagement", cnn))
+            {
+                count = (int)cmdCount.ExecuteScalar();
+                Console.Write(count);
+            }
+
+            // sql keeps throwing an error
+            SqlCommand sc = new SqlCommand("INSERT into dbo.EmployeeManagement (eID, fName,lName, address, zip, pNum, SSN, state, position, shift) values ('" + count+1 + "')" + "('" + fNameTextBox.Text + "')" 
+                + "('" + lNameTextBox.Text + "')" + "('" + addTextBox.Text + "')" + "('" + zipTextBox.Text + "')" + "('" + pNumTextBox.Text + "')" + "('" + sSNTextBox.Text + "')" 
+                + "('" + stateCBox.SelectedIndex + "')" + "('" + positionCBox.SelectedIndex + "')" + "('" + shiftCBox.SelectedIndex + "')", cnn);
             sc.ExecuteNonQuery();
 
             cnn.Close();

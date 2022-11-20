@@ -172,7 +172,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label9.Location = new System.Drawing.Point(571, 127);
+            this.label9.Location = new System.Drawing.Point(556, 129);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(118, 17);
             this.label9.TabIndex = 1;
@@ -183,14 +183,14 @@
             this.pNumTextBox.Location = new System.Drawing.Point(515, 23);
             this.pNumTextBox.Name = "pNumTextBox";
             this.pNumTextBox.Size = new System.Drawing.Size(227, 20);
-            this.pNumTextBox.TabIndex = 5;
+            this.pNumTextBox.TabIndex = 6;
             // 
             // sSNTextBox
             // 
             this.sSNTextBox.Location = new System.Drawing.Point(515, 49);
             this.sSNTextBox.Name = "sSNTextBox";
             this.sSNTextBox.Size = new System.Drawing.Size(227, 20);
-            this.sSNTextBox.TabIndex = 6;
+            this.sSNTextBox.TabIndex = 7;
             // 
             // fNameTextBox
             // 
@@ -277,7 +277,7 @@
             this.stateCBox.Location = new System.Drawing.Point(515, 76);
             this.stateCBox.Name = "stateCBox";
             this.stateCBox.Size = new System.Drawing.Size(227, 21);
-            this.stateCBox.TabIndex = 7;
+            this.stateCBox.TabIndex = 8;
             this.stateCBox.Text = "N/A";
             // 
             // positionCBox
@@ -291,7 +291,7 @@
             this.positionCBox.Location = new System.Drawing.Point(515, 103);
             this.positionCBox.Name = "positionCBox";
             this.positionCBox.Size = new System.Drawing.Size(227, 21);
-            this.positionCBox.TabIndex = 8;
+            this.positionCBox.TabIndex = 9;
             this.positionCBox.Text = "N/A";
             // 
             // pictureBox1
@@ -325,7 +325,7 @@
             this.shiftCBox.Location = new System.Drawing.Point(150, 125);
             this.shiftCBox.Name = "shiftCBox";
             this.shiftCBox.Size = new System.Drawing.Size(250, 21);
-            this.shiftCBox.TabIndex = 9;
+            this.shiftCBox.TabIndex = 5;
             this.shiftCBox.Text = "N/A";
             // 
             // label10
