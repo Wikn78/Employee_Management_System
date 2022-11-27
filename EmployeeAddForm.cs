@@ -42,7 +42,7 @@ namespace EmployeeManagementSystem
         {
             int count = 0;
             string connetionString;
-            connetionString = @"Data Source=JORGLE;Initial Catalog=EmployeeManagement;Integrated Security=True"; // don't forget to change your datasource when using this
+            connetionString = @"Data Source=JORGLE;Initial Catalog=EmployeeManagement;Integrated Security=True"; // don't forget to change your datasource when using this on another PC
             SqlConnection cnn = new SqlConnection(connetionString);
             cnn.Open();
 
