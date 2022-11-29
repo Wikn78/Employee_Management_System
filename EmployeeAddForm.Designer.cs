@@ -327,6 +327,7 @@
             this.shiftCBox.Size = new System.Drawing.Size(250, 21);
             this.shiftCBox.TabIndex = 5;
             this.shiftCBox.Text = "N/A";
+            this.shiftCBox.SelectedIndexChanged += new System.EventHandler(this.shiftCBox_SelectedIndexChanged);
             // 
             // label10
             // 

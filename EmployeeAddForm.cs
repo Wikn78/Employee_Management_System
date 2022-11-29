@@ -41,10 +41,10 @@ namespace EmployeeManagementSystem
         private void button1_Click(object sender, EventArgs e)
         {
             int count = 0;
-            string connetionString;
-            connetionString = @"Data Source=JORGLE;Initial Catalog=EmployeeManagement;Integrated Security=True"; // don't forget to change your datasource when using this on another PC
-            SqlConnection cnn = new SqlConnection(connetionString);
-            cnn.Open();
+            
+            
+            SqlConnection cnn = ApplicationManager.ConnectToDatabase(); // This also opens it
+           
 
             using (SqlCommand cmdCount = new SqlCommand("SELECT COUNT(*) FROM dbo.EmployeeManagement", cnn))
             {
@@ -58,6 +58,11 @@ namespace EmployeeManagementSystem
             sc.ExecuteNonQuery();
 
             cnn.Close();
+        }
+
+        private void shiftCBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
