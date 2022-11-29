@@ -65,5 +65,12 @@ namespace EmployeeManagementSystem
         {
 
         }
+
+        private void chooseImageButton_Click(object sender, EventArgs e)
+        {
+
+
+
+        }
     }
 }

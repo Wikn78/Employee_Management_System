@@ -49,12 +49,13 @@ namespace EmployeeManagementSystem
             if(cnn == null) { return; }
 
 
-            string checkPassword;
-            checkPassword = "SELECT password, userID FROM ManagerLogin WHERE username='" + userNameTextBox.Text + "';";
+            string sqlQuery;
+            sqlQuery = $"SELECT password, userID FROM ManagerLogin WHERE username='{userNameTextBox.Text}';";
             
-            SqlCommand sqlCommand = new SqlCommand(checkPassword, cnn);
+            SqlCommand sqlCommand = new SqlCommand(sqlQuery, cnn);
 
             SqlDataReader reader = sqlCommand.ExecuteReader();
+            
 
 
             // Setting the data in reader;
@@ -65,6 +66,18 @@ namespace EmployeeManagementSystem
                 userPassword = String.Format("{0}", reader[0]);
                 userID = String.Format("{0}", reader[1]);
             }
+            reader.Close();
+            sqlQuery = $"SELECT position FROM EmployeeManagement WHERE eID='{userID}';";
+
+            sqlCommand = new SqlCommand(sqlQuery, cnn);
+            reader = sqlCommand.ExecuteReader();
+            string userPosition = "";
+
+            while (reader.Read())
+            {
+                userPosition = String.Format("{0}", reader[0]);
+            }
+            reader.Close();
 
 
             cnn.Close();
@@ -72,8 +85,10 @@ namespace EmployeeManagementSystem
             // Check if password in database is = to password typed;
             if(userPassword == passwordMaskedTextBox.Text)
             {
-                
-                ShowSelectionScreen(userID);
+                if (userPosition.ToLower() == "manager")
+                    ShowManagmentScreen(userID);
+                else if (userPosition.ToLower() == "employee")
+                    ShowEmployeeScreen(userID);
 
             }
 
@@ -85,8 +100,14 @@ namespace EmployeeManagementSystem
         }
 
         
+        private void ShowEmployeeScreen(string userID)
+        {
+            ScheduleViewerForm scheduleViewer = new ScheduleViewerForm();
+            scheduleViewer.Show();
+            this.Close();
 
-        private void ShowSelectionScreen(string userID)
+        }
+        private void ShowManagmentScreen(string userID)
         {
 
             TransitionForm TransitionForm = new TransitionForm();

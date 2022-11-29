@@ -49,7 +49,7 @@
             this.stateCBox = new System.Windows.Forms.ComboBox();
             this.positionCBox = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.chooseImageButton = new System.Windows.Forms.Button();
             this.shiftCBox = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -304,16 +304,16 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // button4
+            // chooseImageButton
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.button4.Location = new System.Drawing.Point(397, 352);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(101, 25);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Choose Image";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button3_Click);
+            this.chooseImageButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.chooseImageButton.Location = new System.Drawing.Point(397, 352);
+            this.chooseImageButton.Name = "chooseImageButton";
+            this.chooseImageButton.Size = new System.Drawing.Size(101, 25);
+            this.chooseImageButton.TabIndex = 10;
+            this.chooseImageButton.Text = "Choose Image";
+            this.chooseImageButton.UseVisualStyleBackColor = true;
+            this.chooseImageButton.Click += new System.EventHandler(this.chooseImageButton_Click);
             // 
             // shiftCBox
             // 
@@ -364,13 +364,13 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.chooseImageButton);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "EmployeeAddForm";
-            this.Text = "Form3";
+            this.Text = "Add Employee";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -400,7 +400,7 @@
         private System.Windows.Forms.ComboBox stateCBox;
         private System.Windows.Forms.ComboBox positionCBox;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button chooseImageButton;
         private System.Windows.Forms.ComboBox shiftCBox;
         private System.Windows.Forms.Label label10;
     }

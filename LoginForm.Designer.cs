@@ -69,8 +69,9 @@
             // 
             this.userNameTextBox.Location = new System.Drawing.Point(133, 105);
             this.userNameTextBox.Name = "userNameTextBox";
+            this.userNameTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.userNameTextBox.Size = new System.Drawing.Size(100, 20);
-            this.userNameTextBox.TabIndex = 3;
+            this.userNameTextBox.TabIndex = 1;
             // 
             // showPasswordCheckBox
             // 
@@ -107,7 +108,7 @@
             this.LoginButton.Location = new System.Drawing.Point(149, 194);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(75, 23);
-            this.LoginButton.TabIndex = 7;
+            this.LoginButton.TabIndex = 3;
             this.LoginButton.Text = "Login";
             this.LoginButton.UseVisualStyleBackColor = true;
             this.LoginButton.Click += new System.EventHandler(this.loginButton_Click);
@@ -117,7 +118,7 @@
             this.button1.Location = new System.Drawing.Point(12, 224);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
+            this.button1.TabIndex = 5;
             this.button1.Text = "Quit";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.quitButton_Click);
