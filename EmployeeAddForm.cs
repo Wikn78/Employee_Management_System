@@ -40,21 +40,17 @@ namespace EmployeeManagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int count = 0;
-            
-            
-            SqlConnection cnn = ApplicationManager.ConnectToDatabase(); // This also opens it
+            SqlConnection cnn = new SqlConnection("server=(local);database=EmployeeManagement;integrated Security=SSPI;"); // this one works fore me the other does not
+            // SqlConnection conn = ApplicationManager.ConnectToDatabase(); // This also opens it
+                                                                            // Re: This is broken for me
 
-            using (SqlCommand cmdCount = new SqlCommand("SELECT COUNT(*) FROM dbo.EmployeeManagement", cnn))
-            {
-                count = (int)cmdCount.ExecuteScalar(); // error says conneciton has not been initialized
-            }
+            SqlCommand sc = new SqlCommand("INSERT into dbo.EmployeeManagement (fName, lName, address, zip, pNum, SSN, state, position, shift) VALUES ('" + fNameTextBox.Text.Trim() + "', " 
+                + "'" + lNameTextBox.Text.Trim() + "', " + "'" + addTextBox.Text.Trim() + "', " + "'" + zipTextBox.Text.Trim() + "', " + "'" + pNumTextBox.Text.Trim() + "', " + "'" + sSNTextBox.Text.Trim() + "', " 
+                + "'" + stateCBox.SelectedIndex + "', " + "'" + positionCBox.SelectedIndex + "', " + "'" + shiftCBox.SelectedIndex + "');", cnn);
 
-            // sql keeps throwing a formatting error
-            SqlCommand sc = new SqlCommand("INSERT into dbo.EmployeeManagement ([eID], [fName], [lName], [address], [zip], [pNum], [SSN], [state], [position], [shift], [eImage]) values ('" + count+1 + "' " + "'" + fNameTextBox.Text.Trim() + "' " 
-                + "'" + lNameTextBox.Text.Trim() + "' " + "'" + addTextBox.Text.Trim() + "' " + "'" + zipTextBox.Text.Trim() + "' " + "'" + pNumTextBox.Text.Trim() + "' " + "'" + sSNTextBox.Text.Trim() + "' " 
-                + "'" + stateCBox.SelectedIndex + "' " + "'" + positionCBox.SelectedIndex + "' " + "'" + shiftCBox.SelectedIndex + "' " + "'" + pictureBox1.Image + "')", cnn);
-            sc.ExecuteNonQuery();  // error says conneciton has not been initialized
+            cnn.Open();
+
+            sc.ExecuteNonQuery();
 
             cnn.Close();
         }
