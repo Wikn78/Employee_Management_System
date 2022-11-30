@@ -95,6 +95,13 @@ namespace EmployeeManagementSystem
             this.Hide();
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            TransitionForm TransitionForm = new TransitionForm();
+            TransitionForm.Show();
+            this.Hide();
+        }
     }
 }
 

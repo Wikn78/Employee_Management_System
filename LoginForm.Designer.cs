@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.LoginButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // userNameLabel
@@ -63,14 +64,14 @@
             this.passwordMaskedTextBox.Name = "passwordMaskedTextBox";
             this.passwordMaskedTextBox.PasswordChar = '*';
             this.passwordMaskedTextBox.Size = new System.Drawing.Size(100, 20);
-            this.passwordMaskedTextBox.TabIndex = 2;
+            this.passwordMaskedTextBox.TabIndex = 1;
             // 
             // userNameTextBox
             // 
             this.userNameTextBox.Location = new System.Drawing.Point(133, 105);
             this.userNameTextBox.Name = "userNameTextBox";
             this.userNameTextBox.Size = new System.Drawing.Size(100, 20);
-            this.userNameTextBox.TabIndex = 3;
+            this.userNameTextBox.TabIndex = 0;
             // 
             // showPasswordCheckBox
             // 
@@ -107,7 +108,7 @@
             this.LoginButton.Location = new System.Drawing.Point(149, 194);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(75, 23);
-            this.LoginButton.TabIndex = 7;
+            this.LoginButton.TabIndex = 3;
             this.LoginButton.Text = "Login";
             this.LoginButton.UseVisualStyleBackColor = true;
             this.LoginButton.Click += new System.EventHandler(this.loginButton_Click);
@@ -117,16 +118,27 @@
             this.button1.Location = new System.Drawing.Point(12, 224);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
+            this.button1.TabIndex = 5;
             this.button1.Text = "Quit";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.quitButton_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(254, 12);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(116, 23);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Temp Bypass";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(382, 259);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.LoginButton);
             this.Controls.Add(this.label1);
@@ -155,6 +167,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button LoginButton;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

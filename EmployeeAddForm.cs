@@ -44,23 +44,22 @@ namespace EmployeeManagementSystem
             
             
             SqlConnection cnn = ApplicationManager.ConnectToDatabase(); // This also opens it
-           
 
             using (SqlCommand cmdCount = new SqlCommand("SELECT COUNT(*) FROM dbo.EmployeeManagement", cnn))
             {
-                count = (int)cmdCount.ExecuteScalar();
+                count = (int)cmdCount.ExecuteScalar(); // error says conneciton has not been initialized
             }
 
             // sql keeps throwing a formatting error
-            SqlCommand sc = new SqlCommand("INSERT into dbo.EmployeeManagement (eID, fName, lName, address, zip, pNum, SSN, state, position, shift) values ('" + count+1 + "' " + "'" + fNameTextBox.Text + "' " 
-                + "'" + lNameTextBox.Text + "' " + "'" + addTextBox.Text + "' " + "'" + zipTextBox.Text + "' " + "'" + pNumTextBox.Text + "' " + "'" + sSNTextBox.Text + "' " 
-                + "'" + stateCBox.SelectedIndex + "' " + "'" + positionCBox.SelectedIndex + "' " + "'" + shiftCBox.SelectedIndex + "')", cnn);
-            sc.ExecuteNonQuery();
+            SqlCommand sc = new SqlCommand("INSERT into dbo.EmployeeManagement ([eID], [fName], [lName], [address], [zip], [pNum], [SSN], [state], [position], [shift], [eImage]) values ('" + count+1 + "' " + "'" + fNameTextBox.Text.Trim() + "' " 
+                + "'" + lNameTextBox.Text.Trim() + "' " + "'" + addTextBox.Text.Trim() + "' " + "'" + zipTextBox.Text.Trim() + "' " + "'" + pNumTextBox.Text.Trim() + "' " + "'" + sSNTextBox.Text.Trim() + "' " 
+                + "'" + stateCBox.SelectedIndex + "' " + "'" + positionCBox.SelectedIndex + "' " + "'" + shiftCBox.SelectedIndex + "' " + "'" + pictureBox1.Image + "')", cnn);
+            sc.ExecuteNonQuery();  // error says conneciton has not been initialized
 
             cnn.Close();
         }
 
-        private void shiftCBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void imageButton_Click(object sender, EventArgs e)
         {
 
         }

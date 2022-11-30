@@ -313,7 +313,7 @@
             this.button4.TabIndex = 10;
             this.button4.Text = "Choose Image";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button3_Click);
+            this.button4.Click += new System.EventHandler(this.imageButton_Click);
             // 
             // shiftCBox
             // 
@@ -327,7 +327,6 @@
             this.shiftCBox.Size = new System.Drawing.Size(250, 21);
             this.shiftCBox.TabIndex = 5;
             this.shiftCBox.Text = "N/A";
-            this.shiftCBox.SelectedIndexChanged += new System.EventHandler(this.shiftCBox_SelectedIndexChanged);
             // 
             // label10
             // 
