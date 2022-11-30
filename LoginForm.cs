@@ -44,16 +44,16 @@ namespace EmployeeManagementSystem
 
             
             
-            SqlConnection cnn = ApplicationManager.ConnectToDatabase();
+            SqlConnection cnn = new SqlConnection("server=(local);database=EmployeeManagement;integrated Security=SSPI;"); // this one works for me
 
-            if(cnn == null) { return; }
+            if (cnn == null) { return; }
 
 
             string sqlQuery;
             sqlQuery = $"SELECT password, userID FROM ManagerLogin WHERE username='{userNameTextBox.Text}';";
             
             SqlCommand sqlCommand = new SqlCommand(sqlQuery, cnn);
-
+            cnn.Open(); // needed to add this for it to work
             SqlDataReader reader = sqlCommand.ExecuteReader();
             
 
@@ -91,12 +91,6 @@ namespace EmployeeManagementSystem
                     ShowEmployeeScreen(userID);
 
             }
-
-
-
-
-
-
         }
 
         

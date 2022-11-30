@@ -46,7 +46,7 @@ namespace EmployeeManagementSystem
 
             SqlCommand sc = new SqlCommand("INSERT into dbo.EmployeeManagement (fName, lName, address, zip, pNum, SSN, state, position, shift) VALUES ('" + fNameTextBox.Text.Trim() + "', " 
                 + "'" + lNameTextBox.Text.Trim() + "', " + "'" + addTextBox.Text.Trim() + "', " + "'" + zipTextBox.Text.Trim() + "', " + "'" + pNumTextBox.Text.Trim() + "', " + "'" + sSNTextBox.Text.Trim() + "', " 
-                + "'" + stateCBox.SelectedIndex + "', " + "'" + positionCBox.SelectedIndex + "', " + "'" + shiftCBox.SelectedIndex + "');", cnn);
+                + "'" + stateCBox.Text + "', " + "'" + positionCBox.Text + "', " + "'" + shiftCBox.Text + "');", cnn);
 
             cnn.Open();
 
