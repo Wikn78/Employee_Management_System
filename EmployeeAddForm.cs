@@ -59,15 +59,8 @@ namespace EmployeeManagementSystem
             cnn.Close();
         }
 
-        private void imageButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void chooseImageButton_Click(object sender, EventArgs e)
         {
-
-
 
         }
     }
