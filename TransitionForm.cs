@@ -44,10 +44,10 @@ namespace EmployeeManagementSystem
 
             SqlConnection cnn = ApplicationManager.ConnectToDatabase();
 
-            string checkUserID;
-            checkUserID = $"SELECT fName FROM EmployeeManagement WHERE eID='{userID}';";
+            string sqlQuery;
+            sqlQuery = $"SELECT fName FROM EmployeeManagement WHERE eID='{userID}';";
 
-            SqlCommand sqlCommand = new SqlCommand(checkUserID, cnn);
+            SqlCommand sqlCommand = new SqlCommand(sqlQuery, cnn);
             SqlDataReader reader = sqlCommand.ExecuteReader();
 
             string userFName = "";
@@ -58,6 +58,7 @@ namespace EmployeeManagementSystem
             }
 
             greetingLabel.Text = $"Hello, {userFName} welcome to the Employee Managment. Please select a task below to do.";
+            reader.Close();
             cnn.Close();
         }
 

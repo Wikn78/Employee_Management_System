@@ -108,6 +108,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ScheduleViewerForm.resx">
+      <DependentUpon>ScheduleViewerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransitionForm.resx">
       <DependentUpon>TransitionForm.cs</DependentUpon>
     </EmbeddedResource>
