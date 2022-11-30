@@ -70,8 +70,9 @@
             // 
             this.userNameTextBox.Location = new System.Drawing.Point(133, 105);
             this.userNameTextBox.Name = "userNameTextBox";
+            this.userNameTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.userNameTextBox.Size = new System.Drawing.Size(100, 20);
-            this.userNameTextBox.TabIndex = 0;
+            this.userNameTextBox.TabIndex = 1;
             // 
             // showPasswordCheckBox
             // 
