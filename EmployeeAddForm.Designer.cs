@@ -53,7 +53,9 @@
             this.shiftCBox = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.departmentCBox = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,7 +116,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.Location = new System.Drawing.Point(473, 50);
+            this.label3.Location = new System.Drawing.Point(473, 65);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 17);
             this.label3.TabIndex = 1;
@@ -144,7 +146,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label6.Location = new System.Drawing.Point(468, 76);
+            this.label6.Location = new System.Drawing.Point(468, 90);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 17);
             this.label6.TabIndex = 1;
@@ -154,7 +156,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label7.Location = new System.Drawing.Point(451, 102);
+            this.label7.Location = new System.Drawing.Point(451, 116);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(58, 17);
             this.label7.TabIndex = 1;
@@ -174,7 +176,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label9.Location = new System.Drawing.Point(556, 129);
+            this.label9.Location = new System.Drawing.Point(556, 151);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(118, 17);
             this.label9.TabIndex = 1;
@@ -189,7 +191,7 @@
             // 
             // sSNTextBox
             // 
-            this.sSNTextBox.Location = new System.Drawing.Point(515, 49);
+            this.sSNTextBox.Location = new System.Drawing.Point(515, 64);
             this.sSNTextBox.Name = "sSNTextBox";
             this.sSNTextBox.Size = new System.Drawing.Size(227, 20);
             this.sSNTextBox.TabIndex = 7;
@@ -276,7 +278,7 @@
             "WV",
             "WI",
             "WY"});
-            this.stateCBox.Location = new System.Drawing.Point(515, 76);
+            this.stateCBox.Location = new System.Drawing.Point(515, 90);
             this.stateCBox.Name = "stateCBox";
             this.stateCBox.Size = new System.Drawing.Size(227, 21);
             this.stateCBox.TabIndex = 8;
@@ -290,7 +292,7 @@
             "Manager",
             "Supervisor",
             "Human Resources"});
-            this.positionCBox.Location = new System.Drawing.Point(515, 103);
+            this.positionCBox.Location = new System.Drawing.Point(515, 117);
             this.positionCBox.Name = "positionCBox";
             this.positionCBox.Size = new System.Drawing.Size(227, 21);
             this.positionCBox.TabIndex = 9;
@@ -299,9 +301,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::EmployeeManagementSystem.Properties.Resources.PlaceHolder;
-            this.pictureBox1.Location = new System.Drawing.Point(504, 147);
+            this.pictureBox1.Location = new System.Drawing.Point(529, 175);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(238, 230);
+            this.pictureBox1.Size = new System.Drawing.Size(202, 191);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -309,7 +311,7 @@
             // chooseImageButton
             // 
             this.chooseImageButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.chooseImageButton.Location = new System.Drawing.Point(397, 352);
+            this.chooseImageButton.Location = new System.Drawing.Point(409, 341);
             this.chooseImageButton.Name = "chooseImageButton";
             this.chooseImageButton.Size = new System.Drawing.Size(101, 25);
             this.chooseImageButton.TabIndex = 10;
@@ -350,14 +352,40 @@
             this.label11.TabIndex = 1;
             this.label11.Text = "Department";
             // 
-            // comboBox1
+            // departmentCBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(150, 152);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(250, 21);
-            this.comboBox1.TabIndex = 5;
-            this.comboBox1.Text = "N/A";
+            this.departmentCBox.FormattingEnabled = true;
+            this.departmentCBox.Items.AddRange(new object[] {
+            "Toys",
+            "Fresh Food",
+            "Deli"});
+            this.departmentCBox.Location = new System.Drawing.Point(150, 152);
+            this.departmentCBox.Name = "departmentCBox";
+            this.departmentCBox.Size = new System.Drawing.Size(250, 21);
+            this.departmentCBox.TabIndex = 5;
+            this.departmentCBox.Text = "N/A";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label12.Location = new System.Drawing.Point(560, 9);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(119, 13);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "Example: 555-555-5555";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label13.Location = new System.Drawing.Point(561, 48);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(113, 13);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Example: 555-55-5555";
             // 
             // EmployeeAddForm
             // 
@@ -365,7 +393,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.departmentCBox);
             this.Controls.Add(this.shiftCBox);
             this.Controls.Add(this.positionCBox);
             this.Controls.Add(this.stateCBox);
@@ -381,6 +409,8 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -426,6 +456,8 @@
         private System.Windows.Forms.ComboBox shiftCBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox departmentCBox;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }

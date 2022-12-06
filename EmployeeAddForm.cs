@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace EmployeeManagementSystem
@@ -35,18 +36,17 @@ namespace EmployeeManagementSystem
             lNameTextBox.Text = "";
             addTextBox.Text = "";
             zipTextBox.Text = "";
-            // needs to reset the pictureBox
+            pictureBox1.ImageLocation = @"\Images\PlaceHolder.png"; // WIP
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection cnn = new SqlConnection("server=(local);database=EmployeeManagement;integrated Security=SSPI;"); // this one works fore me the other does not
-            // SqlConnection conn = ApplicationManager.ConnectToDatabase(); // This also opens it
-                                                                            // Re: This is broken for me
+            SqlConnection cnn = new SqlConnection("server=(local);database=EmployeeManagement;integrated Security=SSPI;");
+            Image img = pictureBox1.Image;
 
-            SqlCommand sc = new SqlCommand("INSERT into dbo.EmployeeManagement (fName, lName, address, zip, pNum, SSN, state, position, shift) VALUES ('" + fNameTextBox.Text.Trim() + "', " 
-                + "'" + lNameTextBox.Text.Trim() + "', " + "'" + addTextBox.Text.Trim() + "', " + "'" + zipTextBox.Text.Trim() + "', " + "'" + pNumTextBox.Text.Trim() + "', " + "'" + sSNTextBox.Text.Trim() + "', " 
-                + "'" + stateCBox.Text + "', " + "'" + positionCBox.Text + "', " + "'" + shiftCBox.Text + "');", cnn);
+            SqlCommand sc = new SqlCommand("INSERT into dbo.EmployeeManagement (fName, lName, address, zip, pNum, SSN, state, position, shift, department, eImage) VALUES ('" + fNameTextBox.Text.Trim() + "', '" 
+                + lNameTextBox.Text.Trim() + "', '" + addTextBox.Text.Trim() + "', '" + zipTextBox.Text.Trim() + "', '" + pNumTextBox.Text.Trim() + "', '" + sSNTextBox.Text.Trim() + "', '" 
+                + stateCBox.Text + "', '" + positionCBox.Text + "', '" + shiftCBox.Text + "', '" + departmentCBox.Text + "', '"+ img + "');", cnn);
 
             cnn.Open();
 
