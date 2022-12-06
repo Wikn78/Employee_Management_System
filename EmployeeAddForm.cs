@@ -57,7 +57,13 @@ namespace EmployeeManagementSystem
 
         private void chooseImageButton_Click(object sender, EventArgs e)
         {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png;";
 
+            dialog.ShowDialog();
+            string newImage = dialog.FileName;
+
+            pictureBox1.ImageLocation = newImage;
         }
     }
 }

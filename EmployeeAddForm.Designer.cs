@@ -52,6 +52,8 @@
             this.chooseImageButton = new System.Windows.Forms.Button();
             this.shiftCBox = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -338,12 +340,32 @@
             this.label10.TabIndex = 1;
             this.label10.Text = "Shift";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label11.Location = new System.Drawing.Point(62, 156);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(82, 17);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Department";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(150, 152);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(250, 21);
+            this.comboBox1.TabIndex = 5;
+            this.comboBox1.Text = "N/A";
+            // 
             // EmployeeAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.shiftCBox);
             this.Controls.Add(this.positionCBox);
             this.Controls.Add(this.stateCBox);
@@ -352,6 +374,7 @@
             this.Controls.Add(this.addTextBox);
             this.Controls.Add(this.lNameTextBox);
             this.Controls.Add(this.fNameTextBox);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.pNumTextBox);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label8);
@@ -402,5 +425,7 @@
         private System.Windows.Forms.Button chooseImageButton;
         private System.Windows.Forms.ComboBox shiftCBox;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
