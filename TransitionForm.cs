@@ -22,6 +22,7 @@ namespace EmployeeManagementSystem
         {
             EmployeeAddForm addForm = new EmployeeAddForm();
             addForm.Show();
+            addForm.userID = userID;
             this.Hide();
         }
 
@@ -29,6 +30,7 @@ namespace EmployeeManagementSystem
         {
             ScheduleViewerForm scheduleForm = new ScheduleViewerForm();
             scheduleForm.Show();
+
             this.Hide();
         }
 
@@ -38,10 +40,10 @@ namespace EmployeeManagementSystem
             loginForm.Show();
             this.Close();
         }
-
+        string userID;
         public void UpdateGreetingLabel(string userID)
         {
-
+            this.userID = userID;
             SqlConnection cnn = ApplicationManager.ConnectToDatabase();
 
             string sqlQuery;

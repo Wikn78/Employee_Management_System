@@ -7,6 +7,7 @@ using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -40,57 +41,73 @@ namespace EmployeeManagementSystem
         {
 
 
-            
 
-            
-            
-            SqlConnection cnn = new SqlConnection("server=(local);database=EmployeeManagement;integrated Security=SSPI;"); // this one works for me
+            SqlConnection cnn = ApplicationManager.ConnectToDatabase();
 
+
+
+            // SqlConnection cnn = new SqlConnection("server=(local);database=EmployeeManagement;integrated Security=SSPI;"); // this one works for me
+            //cnn.Open(); // needed to add this for it to work
             if (cnn == null) { return; }
 
 
             string sqlQuery;
-            sqlQuery = $"SELECT password, userID FROM ManagerLogin WHERE username='{userNameTextBox.Text}';";
+            sqlQuery = $"SELECT username, password, eID, position FROM EmployeeManagement WHERE username='{userNameTextBox.Text}';";
             
             SqlCommand sqlCommand = new SqlCommand(sqlQuery, cnn);
-            cnn.Open(); // needed to add this for it to work
-            SqlDataReader reader = sqlCommand.ExecuteReader();
             
+            SqlDataReader reader = sqlCommand.ExecuteReader();
+
 
 
             // Setting the data in reader;
+            string username = "";
             string userPassword = "";
             string userID = "";
-            while (reader.Read())
-            {
-                userPassword = String.Format("{0}", reader[0]);
-                userID = String.Format("{0}", reader[1]);
-            }
-            reader.Close();
-            sqlQuery = $"SELECT position FROM EmployeeManagement WHERE eID='{userID}';";
-
-            sqlCommand = new SqlCommand(sqlQuery, cnn);
-            reader = sqlCommand.ExecuteReader();
             string userPosition = "";
 
             while (reader.Read())
             {
-                userPosition = String.Format("{0}", reader[0]);
+                username = String.Format("{0}", reader[0]);
+                userPassword = String.Format("{0}", reader[1]);
+                userID = String.Format("{0}", reader[2]);
+                userPosition = String.Format("{0}", reader[3]);
+                
             }
+
             reader.Close();
+           
+
+            if(userNameTextBox.Text == username && passwordMaskedTextBox.Text == userPassword)
+            {
+
+                
+                if (userPosition.ToLower() == "manager")
+                {
+                    ShowManagmentScreen(userID);
+                }
+                   
+                else if (userPosition.ToLower() == "associate")
+                {
+                    ShowEmployeeScreen(userID);
+                }
+                    
+
+                
+
+
+            }
+            else
+            {
+
+            }
+
+            
 
 
             cnn.Close();
 
-            // Check if password in database is = to password typed;
-            if(userPassword == passwordMaskedTextBox.Text)
-            {
-                if (userPosition.ToLower() == "manager")
-                    ShowManagmentScreen(userID);
-                else if (userPosition.ToLower() == "employee")
-                    ShowEmployeeScreen(userID);
-
-            }
+            
         }
 
         
@@ -98,7 +115,7 @@ namespace EmployeeManagementSystem
         {
             ScheduleViewerForm scheduleViewer = new ScheduleViewerForm();
             scheduleViewer.Show();
-            this.Close();
+            this.Hide();
 
         }
         private void ShowManagmentScreen(string userID)
