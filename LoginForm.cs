@@ -44,7 +44,7 @@ namespace EmployeeManagementSystem
 
             
             
-            SqlConnection cnn = new SqlConnection("server=(local);database=EmployeeManagement;integrated Security=SSPI;"); // this one works for me
+            SqlConnection cnn = new SqlConnection("server=(local);database=EmployeeManagement;integrated Security=SSPI;");
 
             if (cnn == null) { return; }
 
@@ -53,7 +53,7 @@ namespace EmployeeManagementSystem
             sqlQuery = $"SELECT password, userID FROM ManagerLogin WHERE username='{userNameTextBox.Text}';";
             
             SqlCommand sqlCommand = new SqlCommand(sqlQuery, cnn);
-            cnn.Open(); // needed to add this for it to work
+            cnn.Open();
             SqlDataReader reader = sqlCommand.ExecuteReader();
             
 

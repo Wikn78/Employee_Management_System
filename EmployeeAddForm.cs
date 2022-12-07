@@ -21,14 +21,14 @@ namespace EmployeeManagementSystem
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void backButton_Click(object sender, EventArgs e)
         {
             TransitionForm form = new TransitionForm();
             form.Show();
             this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void clearButton_Click(object sender, EventArgs e)
         {
             pNumTextBox.Text = "";
             sSNTextBox.Text = "";
@@ -36,10 +36,10 @@ namespace EmployeeManagementSystem
             lNameTextBox.Text = "";
             addTextBox.Text = "";
             zipTextBox.Text = "";
-            pictureBox1.ImageLocation = @"\Images\PlaceHolder.png"; // WIP
+            pictureBox1.ImageLocation = @".\Images\PlaceHolder.png"; // WIP
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void acceptButton_Click(object sender, EventArgs e)
         {
             SqlConnection cnn = new SqlConnection("server=(local);database=EmployeeManagement;integrated Security=SSPI;");
             Image img = pictureBox1.Image;
