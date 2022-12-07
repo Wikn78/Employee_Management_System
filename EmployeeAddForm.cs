@@ -41,8 +41,6 @@ namespace EmployeeManagementSystem
 
         private void acceptButton_Click(object sender, EventArgs e)
         {
-            //SqlConnection cnn = new SqlConnection("server=(local);database=EmployeeManagement;integrated Security=SSPI;");
-            // cnn.Open();
             SqlConnection cnn = ApplicationManager.ConnectToDatabase();
 
             Image img = pictureBox1.Image;
@@ -50,10 +48,6 @@ namespace EmployeeManagementSystem
             SqlCommand sc = new SqlCommand($"INSERT into dbo.EmployeeManagement (fName, lName, address, zip, pNum, SSN, state, position, shift, department, eImage, startTime, endTime, username, password) VALUES " +
                 $"('{fNameTextBox.Text.Trim()}', '{lNameTextBox.Text.Trim()}', '{addTextBox.Text.Trim()}', '{zipTextBox.Text.Trim()}', '{pNumTextBox.Text.Trim()}', '{sSNTextBox.Text.Trim()}', '{stateCBox.Text}', " +
                 $"'{positionCBox.Text}', '{shiftCBox.Text}', '{departmentCBox.Text}', '{img}', '{startTimeTextBox.Text.Trim()}', '{endTimeTextBox.Text.Trim()}', '{usernameTextBox.Text.Trim()}', '{passwordTextBox.Text.Trim()}');", cnn); 
-                
-                
-
-            
 
             sc.ExecuteNonQuery();
 

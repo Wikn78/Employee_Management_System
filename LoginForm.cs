@@ -40,14 +40,8 @@ namespace EmployeeManagementSystem
         private void loginButton_Click(object sender, EventArgs e)
         {
 
-
-
             SqlConnection cnn = ApplicationManager.ConnectToDatabase();
 
-
-
-            // SqlConnection cnn = new SqlConnection("server=(local);database=EmployeeManagement;integrated Security=SSPI;"); // this one works for me
-            //cnn.Open(); // needed to add this for it to work
             if (cnn == null) { return; }
 
 
@@ -55,7 +49,7 @@ namespace EmployeeManagementSystem
             sqlQuery = $"SELECT username, password, eID, position FROM EmployeeManagement WHERE username='{userNameTextBox.Text}';";
             
             SqlCommand sqlCommand = new SqlCommand(sqlQuery, cnn);
-            cnn.Open(); // needed to add this for it to work
+            cnn.Open();
             SqlDataReader reader = sqlCommand.ExecuteReader();
 
 
@@ -91,23 +85,14 @@ namespace EmployeeManagementSystem
                 {
                     ShowEmployeeScreen(userID);
                 }
-                    
-
                 
-
-
             }
             else
             {
-
+                
             }
 
-            
-
-
             cnn.Close();
-
-            
         }
 
         
