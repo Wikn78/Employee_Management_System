@@ -388,22 +388,22 @@
             this.label12.AutoSize = true;
             this.label12.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label12.Location = new System.Drawing.Point(560, 9);
+            this.label12.Location = new System.Drawing.Point(583, 9);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(119, 13);
+            this.label12.Size = new System.Drawing.Size(91, 13);
             this.label12.TabIndex = 1;
-            this.label12.Text = "Example: 555-555-5555";
+            this.label12.Text = "Ex. 555-555-5555";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label13.Location = new System.Drawing.Point(561, 48);
+            this.label13.Location = new System.Drawing.Point(584, 48);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(113, 13);
+            this.label13.Size = new System.Drawing.Size(85, 13);
             this.label13.TabIndex = 1;
-            this.label13.Text = "Example: 555-55-5555";
+            this.label13.Text = "Ex. 555-55-5555";
             // 
             // label14
             // 

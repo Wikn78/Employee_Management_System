@@ -40,6 +40,10 @@ namespace EmployeeManagementSystem
             lNameTextBox.Text = "";
             addTextBox.Text = "";
             zipTextBox.Text = "";
+            usernameTextBox.Text = "";
+            passwordTextBox.Text = "";
+            startTimeTextBox.Text = "";
+            endTimeTextBox.Text = "";
             // pictureBox1.ImageLocation = (path + @"/Images/PlaceHolder.png"); // WIP; paths always give me a headache
         }
 
