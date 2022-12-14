@@ -36,7 +36,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(55, 113);
+            this.button1.Location = new System.Drawing.Point(55, 103);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(141, 66);
             this.button1.TabIndex = 0;
@@ -46,7 +46,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(278, 86);
+            this.button2.Location = new System.Drawing.Point(238, 103);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(141, 66);
             this.button2.TabIndex = 1;
@@ -56,7 +56,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(154, 243);
+            this.button3.Location = new System.Drawing.Point(150, 202);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(141, 66);
             this.button3.TabIndex = 0;
@@ -69,15 +69,14 @@
             this.greetingLabel.AutoSize = true;
             this.greetingLabel.Location = new System.Drawing.Point(52, 70);
             this.greetingLabel.Name = "greetingLabel";
-            this.greetingLabel.Size = new System.Drawing.Size(37, 13);
+            this.greetingLabel.Size = new System.Drawing.Size(0, 13);
             this.greetingLabel.TabIndex = 2;
-            this.greetingLabel.Text = "Hello, ";
             // 
             // TransitionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(450, 340);
+            this.ClientSize = new System.Drawing.Size(449, 295);
             this.Controls.Add(this.greetingLabel);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);

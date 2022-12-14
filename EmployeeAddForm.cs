@@ -25,11 +25,9 @@ namespace EmployeeManagementSystem
       
         private void backButton_Click(object sender, EventArgs e)
         {
-            EmployeeManager manager = new EmployeeManager();
-            manager.Show();
-            Close();
+            GoBackToManager();
         }
-
+        public string managerID = "";
         private void clearButton_Click(object sender, EventArgs e)
         {
             string path = Directory.GetCurrentDirectory();
@@ -61,9 +59,7 @@ namespace EmployeeManagementSystem
             sc.ExecuteNonQuery();
             cnn.Close();
 
-            EmployeeManager manager = new EmployeeManager();
-            manager.Show();
-            Close();
+            GoBackToManager();
         }
 
         private void chooseImageButton_Click(object sender, EventArgs e)
@@ -105,6 +101,14 @@ namespace EmployeeManagementSystem
             stateCBox.SelectedIndex = 0;
             shiftCBox.SelectedIndex = 0;
             positionCBox.SelectedIndex = 0;
+
+        }
+        private void GoBackToManager()
+        {
+            EmployeeManager employeeMan = new EmployeeManager();
+            employeeMan.Show();
+            employeeMan.managerID = managerID;
+            Close();
 
         }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -22,13 +23,15 @@ namespace EmployeeManagementSystem
         {
             EmployeeManager employeeMan = new EmployeeManager();
             employeeMan.Show();
-
+            employeeMan.managerID = userID;
             Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             ScheduleViewerForm scheduleForm = new ScheduleViewerForm();
+            scheduleForm.isManager = true;
+            scheduleForm.managerID = userID;
             scheduleForm.Show();
 
             Close();
@@ -45,7 +48,11 @@ namespace EmployeeManagementSystem
         public void UpdateGreetingLabel(string userID)
         {
             this.userID = userID;
-            SqlConnection cnn = ApplicationManager.ConnectToDatabase();
+            string connetionString = ConfigurationManager.ConnectionStrings["myCon"].ConnectionString.ToString();
+            SqlConnection cnn = new SqlConnection(connetionString);
+
+            if (cnn == null) { return; }
+            cnn.Open();
 
             string sqlQuery;
             sqlQuery = $"SELECT fName FROM EmployeeManagement WHERE eID='{userID}';";

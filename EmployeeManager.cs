@@ -23,6 +23,7 @@ namespace EmployeeManagementSystem
         {
             EmployeeAddForm addForm = new EmployeeAddForm();
             addForm.Show();
+            addForm.managerID = managerID;
             Close();
         }
 
@@ -30,6 +31,7 @@ namespace EmployeeManagementSystem
         {
             EmployeeRemoveEditForm removeForm = new EmployeeRemoveEditForm();
             removeForm.Show();
+            removeForm.managerID = managerID;
             Close();
         }
 
@@ -54,6 +56,20 @@ namespace EmployeeManagementSystem
 
             reader.Close();
             cnn.Close();
+        }
+        public string managerID = "";
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void goBackButton_Click(object sender, EventArgs e)
+        {
+            TransitionForm transition = new TransitionForm();
+            transition.Show();
+            transition.UpdateGreetingLabel(managerID);
+
+            Close();
         }
     }
 }

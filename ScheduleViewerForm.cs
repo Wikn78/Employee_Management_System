@@ -19,6 +19,7 @@ namespace EmployeeManagementSystem
             InitializeComponent();
         }
 
+        public bool isManager = false;
         private void nightShiftToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -96,6 +97,35 @@ namespace EmployeeManagementSystem
 
         private void ScheduleViewerForm_Load(object sender, EventArgs e)
         {
+
+            if (isManager)
+            {
+                goBackButton.Text = "Go Back";
+
+            }
+
+
+        }
+        public string managerID = "";
+        private void goBackButton_Click(object sender, EventArgs e)
+        {
+
+            if (isManager)
+            {
+                TransitionForm transition = new TransitionForm();
+                transition.Show();
+                transition.UpdateGreetingLabel(managerID);
+                Close();
+      
+            }
+            else
+            {
+
+                LoginForm loginForm = new LoginForm();
+                loginForm.Show();
+                Close();
+
+            }
 
         }
     }

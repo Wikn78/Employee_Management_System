@@ -148,12 +148,20 @@ namespace EmployeeManagementSystem
             cnn.Close();
 
         }
+        public string managerID = "";
 
-        private void goBackButton_Click(object sender, EventArgs e)
+        private void GoBackToManager()
         {
             EmployeeManager employeeMan = new EmployeeManager();
             employeeMan.Show();
+            employeeMan.managerID = managerID;
             Close();
+
+        }
+
+        private void goBackButton_Click(object sender, EventArgs e)
+        {
+            GoBackToManager();
 
         }
 
@@ -171,25 +179,35 @@ namespace EmployeeManagementSystem
             sc.ExecuteNonQuery();
             cnn.Close();
 
-            EmployeeManager employeeMan = new EmployeeManager();
-            employeeMan.Show();
-            Close();
+            GoBackToManager();
 
         }
 
         private void removeEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            string connetionString = ConfigurationManager.ConnectionStrings["myCon"].ConnectionString.ToString();
-            SqlConnection cnn = new SqlConnection(connetionString);
-            cnn.Open();
-            SqlCommand sc = new SqlCommand($"DELETE FROM EmployeeManagement where eID = {Int32.Parse(eIDComboBox.Text)};", cnn);
-            sc.ExecuteNonQuery();
-            cnn.Close();
+           
             
-            EmployeeManager employeeMan = new EmployeeManager();
-            employeeMan.Show();
-            Close();
+
+            if(managerID == eIDComboBox.Text)
+            {
+                MessageBox.Show("YOU CANT DELETE YOUR SELF!");
+            }
+            else
+            {
+                string connetionString = ConfigurationManager.ConnectionStrings["myCon"].ConnectionString.ToString();
+                SqlConnection cnn = new SqlConnection(connetionString);
+                cnn.Open();
+                SqlCommand sc = new SqlCommand($"DELETE FROM EmployeeManagement where eID = {Int32.Parse(eIDComboBox.Text)};", cnn);
+
+                sc.ExecuteNonQuery();
+                cnn.Close();
+
+                GoBackToManager();
+            }
+
+            
+            
 
         }
 
