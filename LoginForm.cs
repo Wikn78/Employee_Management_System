@@ -34,13 +34,13 @@ namespace EmployeeManagementSystem
 
         private void quitButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-
-            SqlConnection cnn = ApplicationManager.ConnectToDatabase();
+            String connetionString = ConfigurationManager.ConnectionStrings["myCon"].ConnectionString.ToString();
+            SqlConnection cnn = new SqlConnection(connetionString);
 
             if (cnn == null) { return; }
 

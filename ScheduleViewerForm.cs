@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -20,9 +21,11 @@ namespace EmployeeManagementSystem
 
         private void nightShiftToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-           SqlConnection cnn = ApplicationManager.ConnectToDatabase();
-            if (cnn == null) return;
+
+            String connetionString = ConfigurationManager.ConnectionStrings["myCon"].ConnectionString.ToString();
+            SqlConnection cnn = new SqlConnection(connetionString);
+
+            cnn.Open();
 
             string sqlQuery;
             sqlQuery = $"SELECT startTime, endTime, fName, lName, department FROM EmployeeManagement WHERE shift='Night Shift';";

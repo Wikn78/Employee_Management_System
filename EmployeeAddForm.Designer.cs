@@ -235,6 +235,8 @@
             // 
             // stateCBox
             // 
+            this.stateCBox.AllowDrop = true;
+            this.stateCBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.stateCBox.FormattingEnabled = true;
             this.stateCBox.Items.AddRange(new object[] {
             "AL",
@@ -291,10 +293,11 @@
             this.stateCBox.Name = "stateCBox";
             this.stateCBox.Size = new System.Drawing.Size(227, 21);
             this.stateCBox.TabIndex = 8;
-            this.stateCBox.Text = "N/A";
             // 
             // positionCBox
             // 
+            this.positionCBox.AllowDrop = true;
+            this.positionCBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.positionCBox.FormattingEnabled = true;
             this.positionCBox.Items.AddRange(new object[] {
             "Associate",
@@ -305,7 +308,6 @@
             this.positionCBox.Name = "positionCBox";
             this.positionCBox.Size = new System.Drawing.Size(227, 21);
             this.positionCBox.TabIndex = 9;
-            this.positionCBox.Text = "N/A";
             // 
             // pictureBox1
             // 
@@ -330,6 +332,8 @@
             // 
             // shiftCBox
             // 
+            this.shiftCBox.AllowDrop = true;
+            this.shiftCBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.shiftCBox.FormattingEnabled = true;
             this.shiftCBox.Items.AddRange(new object[] {
             "Morning Shift",
@@ -339,7 +343,6 @@
             this.shiftCBox.Name = "shiftCBox";
             this.shiftCBox.Size = new System.Drawing.Size(250, 21);
             this.shiftCBox.TabIndex = 5;
-            this.shiftCBox.Text = "N/A";
             // 
             // label10
             // 
@@ -363,6 +366,8 @@
             // 
             // departmentCBox
             // 
+            this.departmentCBox.AllowDrop = true;
+            this.departmentCBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.departmentCBox.FormattingEnabled = true;
             this.departmentCBox.Items.AddRange(new object[] {
             "Toys",
@@ -372,7 +377,6 @@
             this.departmentCBox.Name = "departmentCBox";
             this.departmentCBox.Size = new System.Drawing.Size(250, 21);
             this.departmentCBox.TabIndex = 5;
-            this.departmentCBox.Text = "N/A";
             // 
             // label12
             // 
@@ -399,36 +403,40 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(94, 200);
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label14.Location = new System.Drawing.Point(71, 200);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(55, 13);
+            this.label14.Size = new System.Drawing.Size(73, 17);
             this.label14.TabIndex = 14;
             this.label14.Text = "Username";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(94, 222);
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label15.Location = new System.Drawing.Point(75, 222);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(53, 13);
+            this.label15.Size = new System.Drawing.Size(69, 17);
             this.label15.TabIndex = 15;
             this.label15.Text = "Password";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(94, 287);
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label16.Location = new System.Drawing.Point(76, 287);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(52, 13);
+            this.label16.Size = new System.Drawing.Size(68, 17);
             this.label16.TabIndex = 17;
             this.label16.Text = "End Time";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(94, 264);
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label17.Location = new System.Drawing.Point(71, 264);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(55, 13);
+            this.label17.Size = new System.Drawing.Size(73, 17);
             this.label17.TabIndex = 16;
             this.label17.Text = "Start Time";
             // 
@@ -457,13 +465,14 @@
             // 
             this.endTimeTextBox.Location = new System.Drawing.Point(152, 284);
             this.endTimeTextBox.Name = "endTimeTextBox";
-            this.endTimeTextBox.Size = new System.Drawing.Size(250, 20);
+            this.endTimeTextBox.Size = new System.Drawing.Size(248, 20);
             this.endTimeTextBox.TabIndex = 21;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(150, 311);
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label18.Location = new System.Drawing.Point(224, 245);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(79, 13);
             this.label18.TabIndex = 22;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics.Eventing.Reader;
@@ -41,16 +42,16 @@ namespace EmployeeManagementSystem
 
         private void acceptButton_Click(object sender, EventArgs e)
         {
-            SqlConnection cnn = ApplicationManager.ConnectToDatabase();
-
+            String connetionString = ConfigurationManager.ConnectionStrings["myCon"].ConnectionString.ToString();
+            SqlConnection cnn = new SqlConnection(connetionString);
             Image img = pictureBox1.Image;
 
             SqlCommand sc = new SqlCommand($"INSERT into dbo.EmployeeManagement (fName, lName, address, zip, pNum, SSN, state, position, shift, department, eImage, startTime, endTime, username, password) VALUES " +
                 $"('{fNameTextBox.Text.Trim()}', '{lNameTextBox.Text.Trim()}', '{addTextBox.Text.Trim()}', '{zipTextBox.Text.Trim()}', '{pNumTextBox.Text.Trim()}', '{sSNTextBox.Text.Trim()}', '{stateCBox.Text}', " +
-                $"'{positionCBox.Text}', '{shiftCBox.Text}', '{departmentCBox.Text}', '{img}', '{startTimeTextBox.Text.Trim()}', '{endTimeTextBox.Text.Trim()}', '{usernameTextBox.Text.Trim()}', '{passwordTextBox.Text.Trim()}');", cnn); 
+                $"'{positionCBox.Text}', '{shiftCBox.Text}', '{departmentCBox.Text}', '{img}', '{startTimeTextBox.Text.Trim()}', '{endTimeTextBox.Text.Trim()}', '{usernameTextBox.Text.Trim()}', '{passwordTextBox.Text.Trim()}');", cnn);
 
+            cnn.Open();
             sc.ExecuteNonQuery();
-
             cnn.Close();
 
 
