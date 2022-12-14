@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeAddForm));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -372,6 +373,7 @@
             // 
             // departmentCBox
             // 
+            this.departmentCBox.DisplayMember = "Dept_No";
             this.departmentCBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.departmentCBox.FormattingEnabled = true;
             this.departmentCBox.Location = new System.Drawing.Point(152, 150);
@@ -538,6 +540,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EmployeeAddForm";
             this.Text = "Add Employee";
             this.Load += new System.EventHandler(this.EmployeeAddForm_Load);

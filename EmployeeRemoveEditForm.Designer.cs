@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeRemoveEditForm));
             this.label18 = new System.Windows.Forms.Label();
             this.endTimeTextBox = new System.Windows.Forms.TextBox();
             this.startTimeTextBox = new System.Windows.Forms.TextBox();
@@ -543,6 +544,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.chooseImageButton);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "EmployeeRemoveEditForm";
             this.Text = "EmployeeRemoveForm";
