@@ -50,15 +50,14 @@ namespace EmployeeManagementSystem
             String connetionString = ConfigurationManager.ConnectionStrings["myCon"].ConnectionString.ToString();
             SqlConnection cnn = new SqlConnection(connetionString);
             this.userID = userID;
-            string connetionString = ConfigurationManager.ConnectionStrings["myCon"].ConnectionString.ToString();
-            SqlConnection cnn = new SqlConnection(connetionString);
+           
 
             if (cnn == null) { return; }
             cnn.Open();
 
             string sqlQuery;
             sqlQuery = $"SELECT fName FROM EmployeeManagement WHERE eID='{userID}';";
-            cnn.Open();
+            
             SqlCommand sqlCommand = new SqlCommand(sqlQuery, cnn);
             SqlDataReader reader = sqlCommand.ExecuteReader();
 

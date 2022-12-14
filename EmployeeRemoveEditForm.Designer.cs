@@ -69,8 +69,10 @@
             this.label19 = new System.Windows.Forms.Label();
             this.eIDComboBox = new System.Windows.Forms.ComboBox();
             this.goBackButton = new System.Windows.Forms.Button();
+            this.employeeManagementDataSet1 = new EmployeeManagementSystem.EmployeeManagementDataSet();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeManagementDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // label18
@@ -435,6 +437,7 @@
             this.chooseImageButton.TabIndex = 46;
             this.chooseImageButton.Text = "Choose Image";
             this.chooseImageButton.UseVisualStyleBackColor = true;
+            this.chooseImageButton.Click += new System.EventHandler(this.chooseImageButton_Click);
             // 
             // pictureBox1
             // 
@@ -501,6 +504,11 @@
             this.goBackButton.UseVisualStyleBackColor = true;
             this.goBackButton.Click += new System.EventHandler(this.goBackButton_Click);
             // 
+            // employeeManagementDataSet1
+            // 
+            this.employeeManagementDataSet1.DataSetName = "EmployeeManagementDataSet";
+            this.employeeManagementDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // EmployeeRemoveEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -547,11 +555,12 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "EmployeeRemoveEditForm";
-            this.Text = "EmployeeRemoveForm";
+            this.Text = "Remove/Edit Employee";
             this.Load += new System.EventHandler(this.EmployeeRemoveEditForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeManagementDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -599,5 +608,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.ComboBox eIDComboBox;
         private System.Windows.Forms.Button goBackButton;
+        private EmployeeManagementDataSet employeeManagementDataSet1;
     }
 }

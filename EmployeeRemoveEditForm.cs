@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -65,6 +67,7 @@ namespace EmployeeManagementSystem
         private void eIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Select Data
+            
 
             string connetionString = ConfigurationManager.ConnectionStrings["myCon"].ConnectionString.ToString();
             SqlConnection cnn = new SqlConnection(connetionString);
@@ -141,10 +144,17 @@ namespace EmployeeManagementSystem
 
 
                 }
+                
+
 
 
             }
+
             reader.Close();
+            
+            
+
+           
             cnn.Close();
 
         }
@@ -211,5 +221,9 @@ namespace EmployeeManagementSystem
 
         }
 
+        private void chooseImageButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
