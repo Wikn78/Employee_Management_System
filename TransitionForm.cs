@@ -47,8 +47,6 @@ namespace EmployeeManagementSystem
         string userID;
         public void UpdateGreetingLabel(string userID)
         {
-            String connetionString = ConfigurationManager.ConnectionStrings["myCon"].ConnectionString.ToString();
-            SqlConnection cnn = new SqlConnection(connetionString);
             this.userID = userID;
            
 
