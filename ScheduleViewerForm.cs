@@ -34,12 +34,8 @@ namespace EmployeeManagementSystem
 
             SqlDataReader reader = command.ExecuteReader();
 
-            scheduleViewerTextbox.Text = "";
-            while (reader.Read())
-            {
-                scheduleViewerTextbox.Text += $"{String.Format("{0}", reader[0])}          {String.Format("{0}", reader[1])}          {String.Format("{0}", reader[2])}              {String.Format("{0}", reader[3])}              {String.Format("{0}", reader[4])}\n\n";
-
-            }
+            bindingSource1.DataSource = reader;
+            dataGridView1.DataSource = bindingSource1;
 
             reader.Close();
             cnn.Close();
@@ -59,12 +55,8 @@ namespace EmployeeManagementSystem
 
             SqlDataReader reader = command.ExecuteReader();
 
-            scheduleViewerTextbox.Text = "";
-            while (reader.Read())
-            {
-                scheduleViewerTextbox.Text += $"{String.Format("{0}", reader[0])}          {String.Format("{0}", reader[1])}          {String.Format("{0}", reader[2])}              {String.Format("{0}", reader[3])}              {String.Format("{0}", reader[4])}\n\n";
-
-            }
+            bindingSource1.DataSource = reader;
+            dataGridView1.DataSource = bindingSource1;
 
             reader.Close();
             cnn.Close();
@@ -84,11 +76,8 @@ namespace EmployeeManagementSystem
 
             SqlDataReader reader = command.ExecuteReader();
 
-            scheduleViewerTextbox.Text = "";
-            while (reader.Read())
-            {
-                
-            }
+            bindingSource1.DataSource = reader;
+            dataGridView1.DataSource = bindingSource1;
             
             reader.Close();
             cnn.Close();
@@ -96,6 +85,16 @@ namespace EmployeeManagementSystem
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void ScheduleViewerForm_Load(object sender, EventArgs e)
         {
 
         }

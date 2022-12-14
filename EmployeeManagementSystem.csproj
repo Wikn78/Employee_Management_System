@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -71,6 +74,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EmployeeManagementDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeManager.Designer.cs">
+      <DependentUpon>EmployeeManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeRemoveEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeRemoveEditForm.Designer.cs">
+      <DependentUpon>EmployeeRemoveEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransitionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +114,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="EmployeeAddForm.resx">
       <DependentUpon>EmployeeAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeManager.resx">
+      <DependentUpon>EmployeeManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeRemoveEditForm.resx">
+      <DependentUpon>EmployeeRemoveEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -146,6 +167,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="favicon.ico" />
     <Content Include="Images\PlaceHolder.png" />
   </ItemGroup>
   <ItemGroup />

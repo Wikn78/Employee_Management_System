@@ -1,6 +1,6 @@
 ﻿namespace EmployeeManagementSystem
 {
-    partial class ScheduleViewerForm
+    partial class EmployeeManager
     {
         /// <summary>
         /// Required designer variable.
@@ -30,9 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.morningShiftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eveningShiftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nightShiftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
@@ -43,46 +42,38 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.morningShiftToolStripMenuItem,
-            this.eveningShiftToolStripMenuItem,
-            this.nightShiftToolStripMenuItem});
+            this.addToolStripMenuItem,
+            this.removeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // morningShiftToolStripMenuItem
+            // addToolStripMenuItem
             // 
-            this.morningShiftToolStripMenuItem.Name = "morningShiftToolStripMenuItem";
-            this.morningShiftToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
-            this.morningShiftToolStripMenuItem.Text = "Morning Shift";
-            this.morningShiftToolStripMenuItem.Click += new System.EventHandler(this.morningShiftToolStripMenuItem_Click);
+            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.addToolStripMenuItem.Text = "Add";
+            this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
-            // eveningShiftToolStripMenuItem
+            // removeToolStripMenuItem
             // 
-            this.eveningShiftToolStripMenuItem.Name = "eveningShiftToolStripMenuItem";
-            this.eveningShiftToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
-            this.eveningShiftToolStripMenuItem.Text = "Evening Shift";
-            this.eveningShiftToolStripMenuItem.Click += new System.EventHandler(this.eveningShiftToolStripMenuItem_Click);
-            // 
-            // nightShiftToolStripMenuItem
-            // 
-            this.nightShiftToolStripMenuItem.Name = "nightShiftToolStripMenuItem";
-            this.nightShiftToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
-            this.nightShiftToolStripMenuItem.Text = "Night Shift";
-            this.nightShiftToolStripMenuItem.Click += new System.EventHandler(this.nightShiftToolStripMenuItem_Click);
+            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.removeToolStripMenuItem.Text = "Remove";
+            this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 38);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 371);
+            this.dataGridView1.Size = new System.Drawing.Size(800, 426);
             this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // ScheduleViewerForm
+            // EmployeeManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -90,9 +81,9 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "ScheduleViewerForm";
-            this.Text = "Schedule Viewer";
-            this.Load += new System.EventHandler(this.ScheduleViewerForm_Load);
+            this.Name = "EmployeeManager";
+            this.Text = "Employee Manager";
+            this.Load += new System.EventHandler(this.EmployeeManager_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -105,9 +96,8 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem morningShiftToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eveningShiftToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nightShiftToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource bindingSource1;
     }

@@ -22,12 +22,12 @@ namespace EmployeeManagementSystem
         {
             InitializeComponent();
         }
-        public string userID;
+      
         private void backButton_Click(object sender, EventArgs e)
         {
-            TransitionForm form = new TransitionForm();
-            form.Show();
-            this.Close();
+            EmployeeManager manager = new EmployeeManager();
+            manager.Show();
+            Close();
         }
 
         private void clearButton_Click(object sender, EventArgs e)
@@ -60,6 +60,10 @@ namespace EmployeeManagementSystem
             cnn.Open();
             sc.ExecuteNonQuery();
             cnn.Close();
+
+            EmployeeManager manager = new EmployeeManager();
+            manager.Show();
+            Close();
         }
 
         private void chooseImageButton_Click(object sender, EventArgs e)
@@ -76,11 +80,37 @@ namespace EmployeeManagementSystem
         private void EmployeeAddForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'employeeManagementDataSet.Departments' table. You can move, or remove it, as needed.
-            this.departmentsTableAdapter.Fill(this.employeeManagementDataSet.Departments);
+
+            String connetionString = ConfigurationManager.ConnectionStrings["myCon"].ConnectionString.ToString();
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            SqlCommand sc = new SqlCommand("select Dept_Name from Departments", cnn);
+            SqlDataReader reader = sc.ExecuteReader();
+            
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("Dept_Name", typeof(string));
+            dt.Load(reader);
+            
+            departmentCBox.ValueMember = "Dept_Name";
+            departmentCBox.DisplayMember = "Dept_Name";
+            
+            departmentCBox.DataSource = dt;
+
+            
+           
+            
+            cnn.Close();
+
             stateCBox.SelectedIndex = 0;
             shiftCBox.SelectedIndex = 0;
             positionCBox.SelectedIndex = 0;
 
+        }
+
+        private void departmentCBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

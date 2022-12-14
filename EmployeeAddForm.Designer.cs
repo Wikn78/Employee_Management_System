@@ -55,6 +55,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.departmentCBox = new System.Windows.Forms.ComboBox();
+            this.departmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.employeeManagementDataSet = new EmployeeManagementSystem.EmployeeManagementDataSet();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -66,12 +68,10 @@
             this.startTimeTextBox = new System.Windows.Forms.TextBox();
             this.endTimeTextBox = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.employeeManagementDataSet = new EmployeeManagementSystem.EmployeeManagementDataSet();
-            this.departmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.departmentsTableAdapter = new EmployeeManagementSystem.EmployeeManagementDataSetTableAdapters.DepartmentsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeManagementDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeManagementDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -372,16 +372,24 @@
             // 
             // departmentCBox
             // 
-            this.departmentCBox.AllowDrop = true;
-            this.departmentCBox.DataSource = this.departmentsBindingSource;
-            this.departmentCBox.DisplayMember = "Dept_Name";
             this.departmentCBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.departmentCBox.FormattingEnabled = true;
-            this.departmentCBox.Location = new System.Drawing.Point(150, 152);
+            this.departmentCBox.Location = new System.Drawing.Point(152, 150);
             this.departmentCBox.Name = "departmentCBox";
             this.departmentCBox.Size = new System.Drawing.Size(250, 21);
-            this.departmentCBox.TabIndex = 5;
+            this.departmentCBox.TabIndex = 11;
             this.departmentCBox.ValueMember = "Dept_No";
+            this.departmentCBox.SelectedIndexChanged += new System.EventHandler(this.departmentCBox_SelectedIndexChanged);
+            // 
+            // departmentsBindingSource
+            // 
+            this.departmentsBindingSource.DataMember = "Departments";
+            this.departmentsBindingSource.DataSource = this.employeeManagementDataSet;
+            // 
+            // employeeManagementDataSet
+            // 
+            this.employeeManagementDataSet.DataSetName = "EmployeeManagementDataSet";
+            this.employeeManagementDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label12
             // 
@@ -483,16 +491,6 @@
             this.label18.TabIndex = 22;
             this.label18.Text = "Ex. 1400, 0600";
             // 
-            // employeeManagementDataSet
-            // 
-            this.employeeManagementDataSet.DataSetName = "EmployeeManagementDataSet";
-            this.employeeManagementDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // departmentsBindingSource
-            // 
-            this.departmentsBindingSource.DataMember = "Departments";
-            this.departmentsBindingSource.DataSource = this.employeeManagementDataSet;
-            // 
             // departmentsTableAdapter
             // 
             this.departmentsTableAdapter.ClearBeforeFill = true;
@@ -544,8 +542,8 @@
             this.Text = "Add Employee";
             this.Load += new System.EventHandler(this.EmployeeAddForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeManagementDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeManagementDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

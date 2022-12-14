@@ -20,10 +20,10 @@ namespace EmployeeManagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            EmployeeAddForm addForm = new EmployeeAddForm();
-            addForm.Show();
-            addForm.userID = userID;
-            this.Hide();
+            EmployeeManager employeeMan = new EmployeeManager();
+            employeeMan.Show();
+
+            Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -31,15 +31,16 @@ namespace EmployeeManagementSystem
             ScheduleViewerForm scheduleForm = new ScheduleViewerForm();
             scheduleForm.Show();
 
-            this.Hide();
+            Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
-            this.Close();
+            Close();
         }
+
         string userID;
         public void UpdateGreetingLabel(string userID)
         {
@@ -59,7 +60,7 @@ namespace EmployeeManagementSystem
                 
             }
 
-            greetingLabel.Text = $"Hello, {userFName} welcome to the Employee Managment. Please select a task below to do.";
+            greetingLabel.Text = $"Hello, {userFName} welcome to the Employee Managment. \nPlease select a task below to do.";
             reader.Close();
             cnn.Close();
         }
