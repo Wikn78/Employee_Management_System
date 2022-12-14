@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TransitionForm));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -46,7 +47,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(278, 86);
+            this.button2.Location = new System.Drawing.Point(260, 113);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(141, 66);
             this.button2.TabIndex = 1;
@@ -82,6 +83,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TransitionForm";
             this.Text = "Select Task...";
             this.Load += new System.EventHandler(this.TransitionForm_Load);
