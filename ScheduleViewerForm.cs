@@ -87,7 +87,6 @@ namespace EmployeeManagementSystem
             scheduleViewerTextbox.Text = "";
             while (reader.Read())
             {
-                scheduleViewerTextbox.Text += $"{String.Format("{0}", reader[0])}          {String.Format("{0}", reader[1])}          {String.Format("{0}", reader[2])}              {String.Format("{0}", reader[3])}              {String.Format("{0}", reader[4])}\n\n";
                 
             }
             
