@@ -47,8 +47,10 @@ namespace EmployeeManagementSystem
 
         private void eveningShiftToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SqlConnection cnn = ApplicationManager.ConnectToDatabase();
-            if (cnn == null) return;
+            String connetionString = ConfigurationManager.ConnectionStrings["myCon"].ConnectionString.ToString();
+            SqlConnection cnn = new SqlConnection(connetionString);
+
+            cnn.Open();
 
             string sqlQuery;
             sqlQuery = $"SELECT startTime, endTime, fName, lName, department FROM EmployeeManagement WHERE shift='Evening Shift';";
@@ -70,9 +72,11 @@ namespace EmployeeManagementSystem
 
         private void morningShiftToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SqlConnection cnn = ApplicationManager.ConnectToDatabase();
-            if (cnn == null) return;
-           
+            String connetionString = ConfigurationManager.ConnectionStrings["myCon"].ConnectionString.ToString();
+            SqlConnection cnn = new SqlConnection(connetionString);
+
+            cnn.Open();
+
             string sqlQuery;
             sqlQuery = $"SELECT startTime, endTime, fName, lName, department FROM EmployeeManagement WHERE shift='Morning Shift';";
             
