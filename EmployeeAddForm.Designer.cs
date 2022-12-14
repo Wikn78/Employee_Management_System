@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -65,7 +66,12 @@
             this.startTimeTextBox = new System.Windows.Forms.TextBox();
             this.endTimeTextBox = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
+            this.employeeManagementDataSet = new EmployeeManagementSystem.EmployeeManagementDataSet();
+            this.departmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.departmentsTableAdapter = new EmployeeManagementSystem.EmployeeManagementDataSetTableAdapters.DepartmentsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeManagementDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -367,16 +373,15 @@
             // departmentCBox
             // 
             this.departmentCBox.AllowDrop = true;
+            this.departmentCBox.DataSource = this.departmentsBindingSource;
+            this.departmentCBox.DisplayMember = "Dept_Name";
             this.departmentCBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.departmentCBox.FormattingEnabled = true;
-            this.departmentCBox.Items.AddRange(new object[] {
-            "Toys",
-            "Fresh Food",
-            "Deli"});
             this.departmentCBox.Location = new System.Drawing.Point(150, 152);
             this.departmentCBox.Name = "departmentCBox";
             this.departmentCBox.Size = new System.Drawing.Size(250, 21);
             this.departmentCBox.TabIndex = 5;
+            this.departmentCBox.ValueMember = "Dept_No";
             // 
             // label12
             // 
@@ -478,6 +483,20 @@
             this.label18.TabIndex = 22;
             this.label18.Text = "Ex. 1400, 0600";
             // 
+            // employeeManagementDataSet
+            // 
+            this.employeeManagementDataSet.DataSetName = "EmployeeManagementDataSet";
+            this.employeeManagementDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // departmentsBindingSource
+            // 
+            this.departmentsBindingSource.DataMember = "Departments";
+            this.departmentsBindingSource.DataSource = this.employeeManagementDataSet;
+            // 
+            // departmentsTableAdapter
+            // 
+            this.departmentsTableAdapter.ClearBeforeFill = true;
+            // 
             // EmployeeAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -523,7 +542,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "EmployeeAddForm";
             this.Text = "Add Employee";
+            this.Load += new System.EventHandler(this.EmployeeAddForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeManagementDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -568,5 +590,8 @@
         private System.Windows.Forms.TextBox startTimeTextBox;
         private System.Windows.Forms.TextBox endTimeTextBox;
         private System.Windows.Forms.Label label18;
+        private EmployeeManagementDataSet employeeManagementDataSet;
+        private System.Windows.Forms.BindingSource departmentsBindingSource;
+        private EmployeeManagementDataSetTableAdapters.DepartmentsTableAdapter departmentsTableAdapter;
     }
 }

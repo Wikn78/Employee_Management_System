@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,13 +32,15 @@ namespace EmployeeManagementSystem
 
         private void clearButton_Click(object sender, EventArgs e)
         {
+            string path = Directory.GetCurrentDirectory();
+
             pNumTextBox.Text = "";
             sSNTextBox.Text = "";
             fNameTextBox.Text = "";
             lNameTextBox.Text = "";
             addTextBox.Text = "";
             zipTextBox.Text = "";
-            pictureBox1.ImageLocation = @".\Images\PlaceHolder.png"; // WIP
+            // pictureBox1.ImageLocation = (path + @"/Images/PlaceHolder.png"); // WIP; paths always give me a headache
         }
 
         private void acceptButton_Click(object sender, EventArgs e)
@@ -53,12 +56,6 @@ namespace EmployeeManagementSystem
             cnn.Open();
             sc.ExecuteNonQuery();
             cnn.Close();
-
-
-            TransitionForm transitionForm = new TransitionForm();
-            transitionForm.Show();
-            transitionForm.UpdateGreetingLabel(userID);
-            this.Hide();
         }
 
         private void chooseImageButton_Click(object sender, EventArgs e)
@@ -70,6 +67,16 @@ namespace EmployeeManagementSystem
             string newImage = dialog.FileName;
 
             pictureBox1.ImageLocation = newImage;
+        }
+
+        private void EmployeeAddForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'employeeManagementDataSet.Departments' table. You can move, or remove it, as needed.
+            this.departmentsTableAdapter.Fill(this.employeeManagementDataSet.Departments);
+            stateCBox.SelectedIndex = 0;
+            shiftCBox.SelectedIndex = 0;
+            positionCBox.SelectedIndex = 0;
+
         }
     }
 }

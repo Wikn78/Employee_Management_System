@@ -66,6 +66,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationManager.cs" />
+    <Compile Include="EmployeeManagementDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeManagementDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TransitionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +120,17 @@
       <DependentUpon>TransitionForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DatabaseBackup\EmployeeManagement.bak" />
+    <None Include="EmployeeManagementDataSet.xsc">
+      <DependentUpon>EmployeeManagementDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EmployeeManagementDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EmployeeManagementDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EmployeeManagementDataSet.xss">
+      <DependentUpon>EmployeeManagementDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
