@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -44,12 +45,13 @@ namespace EmployeeManagementSystem
         string userID;
         public void UpdateGreetingLabel(string userID)
         {
+            String connetionString = ConfigurationManager.ConnectionStrings["myCon"].ConnectionString.ToString();
+            SqlConnection cnn = new SqlConnection(connetionString);
             this.userID = userID;
-            SqlConnection cnn = ApplicationManager.ConnectToDatabase();
 
             string sqlQuery;
             sqlQuery = $"SELECT fName FROM EmployeeManagement WHERE eID='{userID}';";
-
+            cnn.Open();
             SqlCommand sqlCommand = new SqlCommand(sqlQuery, cnn);
             SqlDataReader reader = sqlCommand.ExecuteReader();
 
